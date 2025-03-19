@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const cors = require("cors");
+const path = require("path");  // इसे जोड़ा
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,7 +13,7 @@ const TELEGRAM_CHAT_ID = "5029478739"; // यहां अपनी Chat ID ड�
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static("public")); // Static files (CSS, JS) लोड करने के लिए
 
 let messages = []; // पुराने मैसेज स्टोर करने के लिए
 
@@ -44,6 +45,11 @@ app.post("/receive-message", async (req, res) => {
 // 🌐 जब कोई वेबसाइट खोलेगा, उसे पुराने मैसेज मिलेंगे
 app.get("/messages", (req, res) => {
     res.json(messages);
+});
+
+// ✅ यह रूट वेबसाइट का `index.html` serve करेगा
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // 🚀 सर्वर रन करना
