@@ -1,0 +1,82 @@
+/* Romantic Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?love,romance') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Chat Box */
+.chat-container {
+    width: 350px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Messages */
+#chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Messages */
+.user-message {
+    background: #ff4d6d;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 70%;
+    margin-bottom: 8px;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: #ffffff;
+    color: black;
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 70%;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+/* Input Area */
+.input-container {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background: #e03e5a;
+}
